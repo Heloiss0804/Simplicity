@@ -13,10 +13,10 @@ botaoMenu.addEventListener("click", function(event){
     listaDeLinks.classList.toggle("aberto");
 
     if (listaDeLinks.classList.contains("aberto")){
-        botaoMenu.innerHTML = "Fechar &times";
+        botaoMenu.innerHTML = "Fechar &times;";
 
     }else {
-        botaoMenu.innerHTML = "menu &equiv"
+        botaoMenu.innerHTML = "menu &equiv;"
     }
 
   
