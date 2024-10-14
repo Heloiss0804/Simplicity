@@ -1,0 +1,381 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Declaração de variáveis para paletas de cores */
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: #333;
+    --cor-escura: #000;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ececec;
+}
+
+/* Reset em alguns elementos usados neste projeto */
+body,
+h1,
+h2,
+p,
+figure,
+.links-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Importante para uso de medida relativa REM */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    color: var(--cor-texto);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.titulo {
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.titulo a {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+}
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--cor-clara);
+}
+
+.topo .limitador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+}
+
+/* Classe limitador de uso geral */
+.limitador {
+    width: 95vw;
+    margin: auto;
+}
+
+.titulo-menu {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.menu a:hover,
+.menu a:focus {
+    background-color: var(--cor-intermediaria);
+}
+
+/* Estilos para listas ul contida no menu nav */
+.links-menu {
+    display: none;
+}
+
+.links-menu a {
+    color: var(--cor-escura);
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-menu.aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-clara);
+}
+
+/* Exercícios */
+.destaque {
+    height: 88vh;
+    background-attachment: fixed;
+    background-image: url(../imagens/fundo-destaque.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.destaque h2,
+.destaque p {
+    color: var(--cor-clara);
+    text-align: center;
+    animation-name: animaDestaque;
+    animation-duration: 2s;
+}
+
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 7rem);
+}
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    animation: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+/* 1) Criar a animação */
+@keyframes animaDestaque {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+article h2 {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+}
+
+article p {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+address {
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.front-end,
+.historia,
+.localizacao {
+    text-align: center;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    text-shadow: 4px 3px purple;
+}
+
+.historia h2 {
+    color: var(--cor-clara);
+}
+
+.historia iframe {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.rodape {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    height: 30vh;
+    font-style: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Regras para as páginas internas (Produtos, Serviços e Contato) */
+.conteudo-interno {
+    background-color: var(--cor-intermediaria);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.conteudo-interno h2 {
+    padding-left: 0;
+    font-size: 1.8rem;
+}
+
+table {
+    border: solid 4px var(--cor-escura);
+    width: 80%;
+    margin: auto;
+    max-width: 600px;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+thead {
+    background-color: var(--cor-intermediaria);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--cor-escura);
+}
+
+th {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--cor-clara);
+}
+
+td:nth-child(2) {
+    text-align: center;
+}
+
+tr:hover {
+    background-color: var(--cor-intermediaria);
+}
+
+td:last-child,
+td th:last-child {
+    text-align: right;
+}
+
+/* Galeria */
+.galeria {
+    text-align: center;
+}
+
+.galeria img {
+    transform: scale(0.8) rotate(-10deg);
+    border-radius: 50%;
+    box-shadow: var(--cor-escura) 0 0 30px;
+    transition: 0.5s;
+}
+
+.galeria img:hover {
+    transform: scale(1) rotate(0);
+}
+
+/* Regras para o formulário de contato */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: none;
+    padding: 6px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+textarea {
+    height: auto;
+}
+
+button {
+    border: none;
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+button:hover,
+button:focus {
+    background-color: darkblue;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#area-do-cep {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cep {
+    width: 50%;
+}
+
+#buscar {
+    width: 49%;
+    padding: 12px;
+}
+
+.campos-restantes {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (min-width:600px) {
+    .titulo-menu {
+        display: none;
+    }
+
+    .links-menu {
+        display: flex;
+    }
+
+    .links-menu li {
+        width: 100%;
+    }
+
+    .menu {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    html {
+        font-size: 18px;
+    }
+
+    .limitador {
+        max-width: 1000px;
+    }
+}
