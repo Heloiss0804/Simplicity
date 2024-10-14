@@ -13,6 +13,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- Importação do CSS do plugin Lightbox -->
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
@@ -53,15 +55,16 @@
                 público-alvo. Nosso objetivo é impulsionar seu negócio e maximizar seu retorno sobre investimento.
             </p>
             <figure class="galeria">
-                <a href="imagens/consultoria-treinamento.jpg"><img src="imagens/consultoria-treinamento-mini.jpg"
-                        alt="4 pessoas"></a>
-                <a href="imagens/desenvolvimento-web.jpg"><img src="imagens/desenvolvimento-web-mini.jpg"
-                        alt="escrita web design"></a>
+                <a data-lightbox="foto" data-title="4 pessoas" href="imagens/consultoria-treinamento.jpg"><img
+                        src="imagens/consultoria-treinamento-mini.jpg" alt="4 pessoas"></a>
+                <a data-lightbox="foto" data-title="web-design"  href="imagens/desenvolvimento-web.jpg"><img
+                        src="imagens/desenvolvimento-web-mini.jpg" alt="escrita web design"></a>
 
-                <a href="imagens/design-grafico.jpg"> <img src="imagens/design-grafico-mini.jpg" alt="tela do pc"></a>
+                <a data-lightbox="foto" data-title="tela do pc"  href="imagens/design-grafico.jpg"> <img src="imagens/design-grafico-mini.jpg"
+                        alt="tela do pc"></a>
 
-                <a href="imagens/marketing-digital.jpg"><img src="imagens/marketing-digital-mini.jpg"
-                        alt="mega-fone"></a>
+                <a data-lightbox="foto" data-title="mega-fone"  href="imagens/marketing-digital.jpg"><img
+                        src="imagens/marketing-digital-mini.jpg" alt="mega-fone"></a>
 
             </figure>
 
@@ -89,6 +92,17 @@
         <p>Simplicity é um site fictício desenvolvido para fins educacionais &copy; <time>2024</time></p>
 
     </footer>
+    <!-- Importação da biblioteca jquery (sempre primeiro) -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Importação do JS do plugin Lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            albumLabel:"foto %1 de %2"
+        })
+    </script>
     <script src="js/menu.js"></script>
 
 </body>
